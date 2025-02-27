@@ -6,70 +6,59 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/02/14 15:14:33 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/02/26 21:47:38 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	list_print(list list)
+t_list	*get_last_node(t_list *list)
 {
-	if (check_list_empty(list))
-	{
-		return;
-		ft_printf("%s", "La liste est vide");
-	}
-	while (list)
-	{
-		ft_printf("[%d]", list->value);
+	if (!list)
+		return (NULL);
+	while (list->next)
 		list = list->next;
-	}
-	ft_printf("%c", '\n');
+	return (list);
 }
 
-int	list_lenght(list list)
+void	list_print(t_list *list)
+{
+	while (list)
+	{
+		ft_printf("[%d]", list->data);
+		list = list->next;
+	}
+	ft_printf("%c",  '\n');
+}
+
+int	list_lenght(t_list *list)
 {
 	int size;
 
 	size = 0;
-	if (!check_list_empty(list))
+	while (!list)
 	{
-		while (list != NULL)
-		{
-			++size;
-			list = list->next;
-		}
+		++size;
+		list = list->next;
 	}
 	return (size);
 }
 
-struct	boolean check_list_empty(list list)
+void	list_insert(t_list **list, int x)
 {
-	if (!list)
-		return true;
-	return false;
-}
+	t_list	*node;
+	t_list	*last_node;
 
-struct	list_insert(list list, int x)
-{
-	list_element	*element;
-	list_element	*list_temp; // clone de list
-
-	element = malloc(sizeof(*element));
-	if (!element)
-		exit();
-	element->value = x;
-	element->next = NULL;
-	if (check_list_empty(list))
-		return (element);
-	list_temp = list;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = element;
-	return (list);
-}
-
-struct	list_element new_list(void)
-{
-	return (NULL);
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return;
+	node->next = NULL;
+	node->data = x;
+	if(!*list)
+		*list = node;
+	else
+	{
+		last_node = get_last_node(*list);
+		last_node->next = node;
+	}
 }

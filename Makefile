@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 17:53:01 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/02/20 16:15:06 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/02/26 21:19:28 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ LDFLAGS     = -L $(PRINTF) -L $(LIBFT) -lft -lftprintf
 ###########################################
 ## SOURCES
 
-SRC_FILES	= push_swap.c
+SRC_FILES	= push_swap.c list.c checker.c
 OBJ_FILES	= $(SRC_FILES:.c=.o)
 
 ###########################################
