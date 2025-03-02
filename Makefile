@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 17:53:01 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/02/26 21:19:28 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/03/02 19:01:42 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CFLAGS		= -Wall -Wextra -Werror -g
 ###########################################
 ## LIBRAIRIES
 
-PRINTF      = ./functions/printf
+PRINTF      = ./functions/ft_printf
 LIBFT       = ./functions/libft
 IFLAGS      = -I $(PRINTF) -I $(LIBFT)
 LDFLAGS     = -L $(PRINTF) -L $(LIBFT) -lft -lftprintf
@@ -28,7 +28,7 @@ LDFLAGS     = -L $(PRINTF) -L $(LIBFT) -lft -lftprintf
 ###########################################
 ## SOURCES
 
-SRC_FILES	= push_swap.c list.c checker.c
+SRC_FILES	= push_swap.c list.c parsing.c
 OBJ_FILES	= $(SRC_FILES:.c=.o)
 
 ###########################################
