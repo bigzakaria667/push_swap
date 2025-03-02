@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/02 19:30:46 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/03 00:30:06 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,9 @@ int	list_lenght(t_list *list);
 void	list_insert(t_list **list, int x);
 
 /*----------------  parsing.c  ---------------*/
-int	check_arguments(char *argv);
-int	check_one_argument(char *argv, t_list **stack_a);
+int	ft_check_double(char **argv);
+int	ft_check_arguments(char **argv);
+int	ft_check_argument(char *argv, t_list **stack_a);
 int	ft_checker(int argc, char **argv, t_list **stack_a);
 
 /*----------------  push_swap.c  ---------------*/
