@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/05 19:49:26 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/05 20:04:12 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "functions/ft_printf/ft_printf.h"
 #include "functions/libft/libft.h"
 
-// Définition d'une liste
 typedef struct s_list
 {
 	int		data;
