@@ -6,16 +6,21 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/02/26 21:47:38 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/05 19:48:17 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+t_list	*get_before_last_node(t_list *list)
+{
+	while (list->next->next)
+		list = list->next;
+	return (list);
+}
+
 t_list	*get_last_node(t_list *list)
 {
-	if (!list)
-		return (NULL);
 	while (list->next)
 		list = list->next;
 	return (list);
@@ -36,7 +41,7 @@ int	list_lenght(t_list *list)
 	int size;
 
 	size = 0;
-	while (!list)
+	while (list)
 	{
 		++size;
 		list = list->next;
