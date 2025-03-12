@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/05 20:04:12 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/11 17:08:48 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,10 @@ void	ft_push(t_list **stack_a, t_list **stack_b);
 /*----------------  ft_rrotate.c  ---------------*/
 void	ft_rrr(t_list **stack_a, t_list **stack_b);
 void	ft_rrotate(t_list **stack);
+
+/*----------------  ft_cheapest.c  ---------------*/
+int	ft_find_max(t_list *stack);
+int	ft_push_cheap(int node, t_list **stack_a, t_list **stack_b);
+int	ft_cheapest(t_list *stack_a, t_list *stack_b);
 
 #endif

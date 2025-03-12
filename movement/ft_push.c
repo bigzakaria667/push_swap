@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 20:13:29 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/05 17:28:24 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/07 14:10:44 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_push(t_list **stack_a, t_list **stack_b)
 {
 	t_list	*temp;
 
-	if (!*stack_a || !*stack_b)
+	if (!*stack_b)
 		return;
 	temp = (*stack_b);
 	(*stack_b) = (*stack_b)->next;
