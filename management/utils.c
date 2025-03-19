@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/04 20:13:29 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/18 15:32:11 by zel-ghab         ###   ########.fr       */
+/*   Created: 2025/03/17 16:08:33 by zel-ghab          #+#    #+#             */
+/*   Updated: 2025/03/18 14:04:33 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_push(t_stack **stack_a, t_stack **stack_b)
+t_node	*get_before_bot(t_stack *stack)
 {
-	t_node	*temp;
+	t_node	*node;
 
-	if (!*stack_b)
-		return;
-	temp = (*stack_b)->top;
-	(*stack_b)->top = (*stack_b)->top->next;
-	if (!(*stack_b)->top) // Si STACK B est vide
-		(*stack_b)->bot = NULL;
-	temp->next = (*stack_a)->top;
-	(*stack_a)->top = temp;
-	if (!(*stack_a)->bot) // Si STACK A est vide
-		(*stack_a)->bot = temp;
-	stack_refresh(stack_a);
-	stack_refresh(stack_b);
+	node = stack->top;
+	while (node->next->next)
+		node = node->next;
+	return (node);
 }

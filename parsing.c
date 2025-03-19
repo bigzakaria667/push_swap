@@ -6,13 +6,13 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/04 16:48:41 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/16 20:16:29 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_put_into_list(char **argv, t_list **stack_a)
+int	ft_put_into_list(char **argv, t_stack **stack_a)
 {
 	int	i;
 	int	nbcount;
@@ -26,7 +26,7 @@ int	ft_put_into_list(char **argv, t_list **stack_a)
 	if (nbcount <= 1)
 		return (1);
 	while (argv[i])
-		list_insert(stack_a, ft_atoi(argv[i++]));
+		stack_insert(stack_a, ft_atoi(argv[i++]));
 	return (0);
 }
 
@@ -53,7 +53,7 @@ int	ft_check_double(char **argv)
 	return (0);
 }
 
-int	ft_check_arguments(char **argv, t_list **stack_a)
+int	ft_check_arguments(char **argv, t_stack **stack_a)
 {
 	int	i;
 	int	j;
@@ -80,7 +80,7 @@ int	ft_check_arguments(char **argv, t_list **stack_a)
 	return (0);
 }
 
-int	ft_check_argument(char *argv, t_list **stack_a)
+int	ft_check_argument(char *argv, t_stack **stack_a)
 {
 	int	i;
 	char	**spliter;
@@ -104,7 +104,7 @@ int	ft_check_argument(char *argv, t_list **stack_a)
 	return (0);
 }
 
-int	ft_checker(int argc, char **argv, t_list **stack_a)
+int	ft_checker(int argc, char **argv, t_stack **stack_a)
 {
 	if (argc < 2)
 		return (1);

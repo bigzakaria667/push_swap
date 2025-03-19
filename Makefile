@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 17:53:01 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/03/11 14:12:57 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/03/18 14:46:03 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,9 @@ LDFLAGS     = -L $(PRINTF) -L $(LIBFT) -lft -lftprintf
 
 SRC_FILES	= push_swap.c \
 		  parsing.c \
-		  management/list.c \
-		  management/ft_cheapest.c \
+		  management/stack.c \
+		  management/node.c \
+		  management/utils.c \
 		  movement/ft_swap.c \
 		  movement/ft_push.c \
 		  movement/ft_rotate.c \

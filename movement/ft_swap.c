@@ -6,13 +6,13 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:05:28 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/05 17:32:55 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/18 15:33:03 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	ft_ss(t_list **stack_a, t_list **stack_b)
+void	ft_ss(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!*stack_a || !*stack_b)
 		return;
@@ -20,16 +20,19 @@ void	ft_ss(t_list **stack_a, t_list **stack_b)
 	ft_swap(stack_b);
 }
 
-void	ft_swap(t_list **stack)
+void	ft_swap(t_stack **stack)
 {
-	t_list	*second;
+	t_node	*second;
 	
 	if (!*stack)
 		return;
-	if (list_lenght(*stack) < 2)
+	if ((*stack)->size < 2)
 		return;
-	second = (*stack)->next;
-	(*stack)->next = second->next;
-	second->next = (*stack);
-	*stack = second;
+	second = (*stack)->top->next;
+	(*stack)->top->next = second->next;
+	second->next = (*stack)->top;
+	(*stack)->top = second;
+	if ((*stack)->size < 2)
+		(*stack)->bot = (*stack)->top->next;
+	stack_refresh(stack);
 }
