@@ -6,11 +6,24 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:14:21 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/19 20:32:10 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/19 22:43:34 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	node_moves(t_node **node, t_stack *stack_a, t_stack *stack_b)
+{
+	int	count;
+
+	count = 0;
+	// Faire monter node au top de STACK A
+	count += ft_go_top_a(*node, stack_a, stack_b);
+	// Faire monter targer au top de STACK B
+	count += ft_go_top_b(*node, stack_a, stack_b);
+	// Set la somme des counts
+	(*node)->moves = count;
+}
 
 void	node_target(t_node **node, t_stack *stack)
 {
@@ -51,6 +64,7 @@ void	node_init(t_stack **stack_a, t_stack *stack_b)
 		node->index = index;
 		node_median(&node, (*stack_a)->size);
 		node_target(&node, stack_b);
+		node_moves(&node, stack_a, stack_b);
 		node = node->next;
 		index++;
 	}

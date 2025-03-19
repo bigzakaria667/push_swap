@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 17:53:01 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/03/18 14:46:03 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/03/19 22:49:21 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,7 @@ SRC_FILES	= push_swap.c \
 		  management/stack.c \
 		  management/node.c \
 		  management/utils.c \
+		  management/moves.c \
 		  movement/ft_swap.c \
 		  movement/ft_push.c \
 		  movement/ft_rotate.c \

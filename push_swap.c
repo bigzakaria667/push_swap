@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/19 20:56:22 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/19 22:55:28 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@ void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 	while (i < 2)
 	{
 		ft_push(stack_b, stack_a);
-		// 2éme ÉTAPE : Set les targets de chaque node de A
+		// 2éme ÉTAPE et 3éme ÉTAPE : Set les targets de chaque node de A et set le cheap
 		stack_refresh(stack_a);
 		node_init(stack_a, *stack_b);
 		i++;
 	}
-	// 3éme ÉTAPE : Push le cheapest node 
+	// 3éme ÉTAPE : Push le cheapest node
+	
 }
 
 int	main(int argc, char **argv)
