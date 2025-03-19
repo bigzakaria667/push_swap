@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/19 20:53:12 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/19 20:56:22 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 	// 1er ÉTAPE : Push deux fois vers B
 	while (i < 2)
 	{
-	
 		ft_push(stack_b, stack_a);
 		// 2éme ÉTAPE : Set les targets de chaque node de A
 		stack_refresh(stack_a);
