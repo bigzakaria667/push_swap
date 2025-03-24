@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:05:28 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/18 15:33:03 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 22:56:14 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,4 @@ void	ft_swap(t_stack **stack)
 	(*stack)->top = second;
 	if ((*stack)->size < 2)
 		(*stack)->bot = (*stack)->top->next;
-	stack_refresh(stack);
 }

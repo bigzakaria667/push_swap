@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/24 15:24:38 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 23:05:01 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,21 +73,22 @@ void	stack_insert(t_stack **stack, int x)
 	(*stack)->bot = node;
 }
 
-void	stack_refresh(t_stack **stack_a)
+void	stack_init(t_stack **stack_a, t_stack **stack_b)
 {
-	stack_size(stack_a);
-	stack_min_max(stack_a);
-}
-
-void	stack_init(t_stack **stack)
-{
-	*stack = malloc(sizeof(t_stack));
-	if (!*stack)
+	*stack_a = malloc(sizeof(t_stack));
+	*stack_b = malloc(sizeof(t_stack));
+	if (!*stack_a || !*stack_b)
 		return;
-	(*stack)->size = 0;
-	(*stack)->top = NULL;
-	(*stack)->bot = NULL;
-	(*stack)->max = NULL;
-	(*stack)->min = NULL;
-	(*stack)->cheapest = NULL;
+	(*stack_a)->size = 0;
+	(*stack_a)->top = NULL;
+	(*stack_a)->bot = NULL;
+	(*stack_a)->max = NULL;
+	(*stack_a)->min = NULL;
+	(*stack_a)->cheapest = NULL;
+	(*stack_b)->size = 0;
+	(*stack_b)->top = NULL;
+	(*stack_b)->bot = NULL;
+	(*stack_b)->max = NULL;
+	(*stack_b)->min = NULL;
+	(*stack_b)->cheapest = NULL;
 }

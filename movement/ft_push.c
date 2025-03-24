@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 20:13:29 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/18 15:32:11 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 23:06:53 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,4 @@ void	ft_push(t_stack **stack_a, t_stack **stack_b)
 	(*stack_a)->top = temp;
 	if (!(*stack_a)->bot) // Si STACK A est vide
 		(*stack_a)->bot = temp;
-	stack_refresh(stack_a);
-	stack_refresh(stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 17:01:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/18 15:32:29 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 23:07:34 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,4 @@ void	ft_rotate(t_stack **stack)
 	(*stack)->bot->next = temp;
 	(*stack)->bot = temp;
 	(*stack)->bot->next = NULL;
-	stack_refresh(stack);
 }

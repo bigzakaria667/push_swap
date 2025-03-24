@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/24 15:33:06 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 23:04:33 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,13 @@
 void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 {
 	// Initialisation des stacks et des nodes
-	stack_refresh(stack_a);
-	stack_refresh(stack_b);
-	node_init(stack_a, stack_b);
+	ft_refresh(stack_a, stack_b);
 	// 1er ÉTAPE : Push deux fois vers B
 	ft_push(stack_b, stack_a);
-	node_init(stack_a, stack_b);
+	ft_refresh(stack_a, stack_b);
 	ft_push(stack_b, stack_a);
+	ft_refresh(stack_a, stack_b);
 	// 2éme ÉTAPE : Set target et trouver les min moves
-	node_init(stack_a, stack_b);
 	stack_print(*stack_a);
 	stack_print(*stack_b);
 	ft_printf("%c" ,'\n');
@@ -31,7 +29,7 @@ void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 	while ((*stack_a)->size > 3)
 	{
 		push_cheap(stack_a, stack_b);
-		node_init(stack_a, stack_b);
+		ft_refresh(stack_a, stack_b);
 		stack_print(*stack_a);
 		stack_print(*stack_b);
 		ft_printf("%c" ,'\n');
@@ -43,8 +41,7 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	stack_init(&stack_a);
-	stack_init(&stack_b);
+	stack_init(&stack_a, &stack_b);
 	if (ft_checker(argc, argv, &stack_a) != 0)
 		return (ft_printf("%s", "Error!"));
 	else

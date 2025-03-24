@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/24 15:04:48 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 23:03:58 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ void	stack_print(t_stack *stack);
 void	stack_min_max(t_stack **stack);
 void	stack_size(t_stack **stack);
 void	stack_insert(t_stack **stack, int x);
-void	stack_refresh(t_stack **stack_a);
-void	stack_init(t_stack **stack);
+void	stack_init(t_stack **stack_a, t_stack **stack_b);
 
 /*----------------  node.c  ---------------*/
 void	node_target(t_node **node, t_stack *stack);
@@ -60,6 +59,7 @@ void	push_cheap(t_stack **stack_a, t_stack **stack_b);
 void	get_cheapest(t_stack **stack_a);
 
 /*----------------  utils.c  ---------------*/
+void	ft_refresh(t_stack **stack_a, t_stack **stack_b);
 t_node	*get_before_bot(t_stack *stack);
 
 /*----------------  parsing.c  ---------------*/
