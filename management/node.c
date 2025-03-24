@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:14:21 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/24 15:20:59 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 23:13:55 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,22 +67,22 @@ void	node_init(t_stack **stack_a, t_stack **stack_b)
 	if (!stack_a || !*stack_a || !stack_b)
 		return ;
 	index = 0;
+	node = (*stack_b)->top;
+	while (node)
+	{
+		node->index = index;
+		node_median(&node, (*stack_b)->size);
+		node = node->next;
+		index++;
+	}
 	node = (*stack_a)->top;
+	index = 0;
 	while (node)
 	{
 		node->index = index;
 		node_median(&node, (*stack_a)->size);
 		node_target(&node, *stack_b);
 		node_moves(&node, stack_a, stack_b);
-		node = node->next;
-		index++;
-	}
-	node = (*stack_b)->top;
-	index = 0;
-	while (node)
-	{
-		node->index = index;
-		node_median(&node, (*stack_b)->size);
 		node = node->next;
 		index++;
 	}
