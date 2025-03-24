@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/23 00:14:13 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:04:48 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include "functions/ft_printf/ft_printf.h"
 #include "functions/libft/libft.h"
 #include <limits.h>
+#include <stdio.h>
 
 typedef struct s_node
 {
@@ -52,7 +53,7 @@ void	stack_init(t_stack **stack);
 void	node_target(t_node **node, t_stack *stack);
 void	node_median(t_node **node, int size_stack);
 void	node_init(t_stack **stack, t_stack **stack_b);
-void	node_moves(t_node **node, t_stack *stack_a, t_stack *stack_b);
+void	node_moves(t_node **node, t_stack **stack_a, t_stack **stack_b);
 
 /*----------------  cheapest.c  ---------------*/
 void	push_cheap(t_stack **stack_a, t_stack **stack_b);

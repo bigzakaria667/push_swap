@@ -6,27 +6,27 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:14:21 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/23 02:03:45 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:20:59 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	node_moves(t_node **node, t_stack *stack_a, t_stack *stack_b)
+void	node_moves(t_node **node, t_stack **stack_a, t_stack **stack_b)
 {
 	int	moves;
 
-	if (!*node || !stack_a->top || !stack_b->top)
+	if (!*node || !(*stack_a)->top || !(*stack_b)->top)
 		return;
 	moves = 0;
 	if ((*node)->median == 0)
 		moves += (*node)->index;
 	else
-		moves += stack_a->size - (*node)->index;
+		moves += (*stack_a)->size - (*node)->index;
 	if ((*node)->target->median == 0)
 		moves += (*node)->target->index;
 	else
-		moves += stack_b->size - (*node)->target->index;
+		moves += (*stack_b)->size - (*node)->target->index;
 	(*node)->moves = moves;
 }
 
@@ -39,15 +39,15 @@ void	node_target(t_node **node, t_stack *stack)
 	target = NULL;
 	while (s_node)
 	{
-		if ((*node)->data < s_node->data)
+		if ((*node)->data > s_node->data)
 		{
-			if (!target || target->data < s_node->data)
-					target = s_node->next;
+			if (!target || s_node->data > target->data)
+				target = s_node;
 		}
 		s_node = s_node->next;
 	}
 	if (!target)
-		target = stack->min;
+		target = stack->max;
 	(*node)->target = target;
 }
 
@@ -73,7 +73,7 @@ void	node_init(t_stack **stack_a, t_stack **stack_b)
 		node->index = index;
 		node_median(&node, (*stack_a)->size);
 		node_target(&node, *stack_b);
-		node_moves(&node, *stack_a, *stack_b);
+		node_moves(&node, stack_a, stack_b);
 		node = node->next;
 		index++;
 	}
