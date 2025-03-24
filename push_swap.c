@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/24 15:22:32 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/24 15:33:06 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 	ft_push(stack_b, stack_a);
 	node_init(stack_a, stack_b);
 	ft_push(stack_b, stack_a);
+	// 2éme ÉTAPE : Set target et trouver les min moves
 	node_init(stack_a, stack_b);
 	stack_print(*stack_a);
 	stack_print(*stack_b);
