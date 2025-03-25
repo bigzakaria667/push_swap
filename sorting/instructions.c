@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 15:43:53 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/25 16:44:24 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:50:30 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,5 @@ void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 	}
 	// 4éme ÉTAPE : Trier les 3 nodes restants de A
 	ft_sort_three(stack_a, stack_b);
+	// 5éme ÉTAPE : Push les nodes de B au bon target
 }
