@@ -6,23 +6,30 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/24 23:05:01 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:26:34 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	stack_print(t_stack *stack)
+void	stack_print(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*node;
 
-	node = stack->top;
+	node = stack_a->top;
 	while (node)
 	{
 		ft_printf("[%d]", node->data);
 		node = node->next;
 	}
 	ft_printf("%c",  '\n');
+	node = stack_b->top;
+	while (node)
+	{
+		ft_printf("[%d]", node->data);
+		node = node->next;
+	}
+	ft_printf("%s",  "\n\n");
 }
 
 void	stack_min_max(t_stack **stack)

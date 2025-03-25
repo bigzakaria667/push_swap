@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/25 15:51:17 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/25 16:23:54 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_stack
 int	main(int argc, char **argv);
 
 /*----------------  stack.c  ---------------*/
-void	stack_print(t_stack *stack);
+void	stack_print(t_stack *stack_a, t_stack *stack_b);
 void	stack_min_max(t_stack **stack);
 void	stack_size(t_stack **stack);
 void	stack_insert(t_stack **stack, int x);
