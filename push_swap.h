@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/24 23:03:58 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/25 15:51:17 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,15 @@ void	node_median(t_node **node, int size_stack);
 void	node_init(t_stack **stack, t_stack **stack_b);
 void	node_moves(t_node **node, t_stack **stack_a, t_stack **stack_b);
 
-/*----------------  cheapest.c  ---------------*/
-void	push_cheap(t_stack **stack_a, t_stack **stack_b);
-void	get_cheapest(t_stack **stack_a);
-
 /*----------------  utils.c  ---------------*/
 void	ft_refresh(t_stack **stack_a, t_stack **stack_b);
 t_node	*get_before_bot(t_stack *stack);
+
+/*----------------  cheapest.c  ---------------*/
+void	push_cheap(t_stack **stack_a, t_stack **stack_b);
+
+/*----------------  instructions.c  ---------------*/
+void	ft_instructions(t_stack **stack_a, t_stack **stack_b);
 
 /*----------------  parsing.c  ---------------*/
 int	ft_put_into_list(char **argv, t_stack **stack_a);

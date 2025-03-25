@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 17:53:01 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/03/22 23:38:42 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/03/25 15:52:49 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,9 +30,10 @@ LDFLAGS     = -L $(PRINTF) -L $(LIBFT) -lft -lftprintf
 
 SRC_FILES	= push_swap.c \
 		  parsing.c \
+		  sorting/cheapest.c \
+		  sorting/instructions.c \
 		  management/stack.c \
 		  management/node.c \
-		  management/cheapest.c \
 		  management/utils.c \
 		  movement/ft_swap.c \
 		  movement/ft_push.c \
@@ -56,7 +57,7 @@ ${NAME} : ${OBJ_FILES}
 	@${CC} ${CFLAGS} ${IFLAGS} -c $< -o $@
 
 clean :
-	@rm -f ${OBJ_FILES} movement/*.o management/*.o
+	@rm -f ${OBJ_FILES} movement/*.o management/*.o sorting/*.o
 	@make -s clean -C $(LIBFT)
 	@make -s clean -C $(PRINTF)
 	@echo "🧹 Fichiers objets supprimés."
