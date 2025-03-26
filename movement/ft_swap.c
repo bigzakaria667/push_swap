@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 17:05:28 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/24 22:56:14 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/26 17:57:06 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ void	ft_swap(t_stack **stack)
 {
 	t_node	*second;
 	
-	if (!*stack)
-		return;
-	if ((*stack)->size < 2)
+	if (!(*stack) || (*stack)->size < 2)
 		return;
 	second = (*stack)->top->next;
 	(*stack)->top->next = second->next;

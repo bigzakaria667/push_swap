@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/25 16:23:54 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/26 17:44:30 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,14 @@ void	stack_insert(t_stack **stack, int x);
 void	stack_init(t_stack **stack_a, t_stack **stack_b);
 
 /*----------------  node.c  ---------------*/
-void	node_target(t_node **node, t_stack *stack);
-void	node_median(t_node **node, int size_stack);
-void	node_init(t_stack **stack, t_stack **stack_b);
+void	node_read_b(t_stack **stack_b, t_stack **stack);
 void	node_moves(t_node **node, t_stack **stack_a, t_stack **stack_b);
+void	node_median(t_node **node, int size_stack);
+void	node_init(t_stack **stack_a, t_stack **stack_b);
+
+/*----------------  target.c  ---------------*/
+void	node_target_b(t_node **node, t_stack **stack);
+void	node_target_a(t_node **node, t_stack **stack);
 
 /*----------------  utils.c  ---------------*/
 void	ft_refresh(t_stack **stack_a, t_stack **stack_b);

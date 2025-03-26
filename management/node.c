@@ -6,11 +6,23 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:14:21 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/25 17:17:51 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/26 17:43:26 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	node_read_b(t_stack **stack_b, t_stack **stack_a)
+{
+	t_node	*node;
+
+	node = (*stack_b)->top;
+	while (node)
+	{
+		node_target_b(&node, stack_a);
+		node = node->next;
+	}
+}
 
 void	node_moves(t_node **node, t_stack **stack_a, t_stack **stack_b)
 {
@@ -47,6 +59,7 @@ void	node_init(t_stack **stack_a, t_stack **stack_b)
 		return;
 	index = 0;
 	node = (*stack_b)->top;
+	// Il faut refresh B d'abord avant de set les targets de A
 	while (node)
 	{
 		node->index = index++;
@@ -59,8 +72,10 @@ void	node_init(t_stack **stack_a, t_stack **stack_b)
 	{
 		node->index = index++;
 		node_median(&node, (*stack_a)->size);
-		node_target(&node, *stack_b);
+		node_target_a(&node, stack_b);
 		node_moves(&node, stack_a, stack_b);
 		node = node->next;
 	}
+	// Il faut calculer les target de B aprés avoir refresh A
+	node_read_b(stack_b, stack_a);
 }
