@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:14:21 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/26 17:43:26 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/27 17:46:59 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	node_read_b(t_stack **stack_b, t_stack **stack_a)
 {
 	t_node	*node;
 
+	if (!(*stack_a)->top || !(*stack_b)->top)
+		return;
 	node = (*stack_b)->top;
 	while (node)
 	{
@@ -55,11 +57,10 @@ void	node_init(t_stack **stack_a, t_stack **stack_b)
 	int	index;
 	t_node	*node;
 
-	if (!stack_a || !*stack_a || !stack_b)
+	if (!(*stack_a)->top && !(*stack_b)->top)
 		return;
 	index = 0;
 	node = (*stack_b)->top;
-	// Il faut refresh B d'abord avant de set les targets de A
 	while (node)
 	{
 		node->index = index++;
@@ -74,8 +75,8 @@ void	node_init(t_stack **stack_a, t_stack **stack_b)
 		node_median(&node, (*stack_a)->size);
 		node_target_a(&node, stack_b);
 		node_moves(&node, stack_a, stack_b);
+		get_cheapest(stack_a);
 		node = node->next;
 	}
-	// Il faut calculer les target de B aprés avoir refresh A
 	node_read_b(stack_b, stack_a);
 }
