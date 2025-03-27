@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 15:43:53 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/26 17:39:33 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/27 17:02:00 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,15 @@
 
 void	ft_push_target_b(t_stack **stack_a, t_stack **stack_b)
 {
+	int	median;
+
+	median = 0;
 	while ((*stack_b)->size > 0) 
 	{
+		median = (*stack_a)->top->target->median;
 		while ((*stack_a)->top->data != (*stack_b)->top->target->data)
 		{
-			if ((*stack_b)->top->target->median == 0)
+			if (median == 0)
 				ft_rrotate(stack_a);
 			else
 				ft_rotate(stack_a);
