@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 17:53:01 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/03/26 14:53:14 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/03/28 15:51:59 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,9 +29,9 @@ LDFLAGS     = -L $(PRINTF) -L $(LIBFT) -lft -lftprintf
 ## SOURCES
 
 SRC_FILES	= push_swap.c \
-		  parsing.c \
 		  sorting/cheapest.c \
 		  sorting/instructions.c \
+		  management/parsing.c \
 		  management/stack.c \
 		  management/node.c \
 		  management/target.c \

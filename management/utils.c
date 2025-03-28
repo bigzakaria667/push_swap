@@ -6,11 +6,50 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 16:08:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/27 17:38:51 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/28 17:05:15 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+void	ft_error(int error)
+{
+	if (error == 1)
+	{
+		ft_printf("%s", "Error\n");
+		exit(1);
+	}
+	else
+		exit(0);
+}
+
+void	ft_print_move(int move)
+{
+	if (move == 0)
+		return;
+	if (move == 1)
+		ft_printf("%s", "sa, ");
+	if (move == 2)
+		ft_printf("%s", "sb, ");
+	if (move == 3)
+		ft_printf("%s", "ss, ");
+	if (move == 4)
+		ft_printf("%s", "pa, ");
+	if (move == 5)
+		ft_printf("%s", "pb, ");
+	if (move == 6)
+		ft_printf("%s", "ra, ");
+	if (move == 7)
+		ft_printf("%s", "rb, ");
+	if (move == 8)
+		ft_printf("%s", "rr, ");
+	if (move == 9)
+		ft_printf("%s", "rra, ");
+	if (move == 10)
+		ft_printf("%s", "rrb, ");
+	if (move == 11)
+		ft_printf("%s", "rrr, ");
+}
 
 void	ft_refresh_last_stack(t_stack **stack)
 {

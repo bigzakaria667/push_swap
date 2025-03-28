@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/27 17:58:14 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/03/28 16:34:46 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #include "functions/ft_printf/ft_printf.h"
 #include "functions/libft/libft.h"
 #include <limits.h>
-#include <stdio.h>
 
 typedef struct s_node
 {
@@ -59,6 +58,8 @@ void	node_target_b(t_node **node, t_stack **stack);
 void	node_target_a(t_node **node, t_stack **stack);
 
 /*----------------  utils.c  ---------------*/
+void	ft_print_move(int move);
+void	ft_error(int error);
 void	ft_refresh_last_stack(t_stack **stack);
 void	ft_refresh(t_stack **stack_a, t_stack **stack_b);
 t_node	*get_before_bot(t_stack *stack);
@@ -81,18 +82,18 @@ int	ft_check_argument(char *argv, t_stack **stack_a);
 int	ft_checker(int argc, char **argv, t_stack **stack_a);
 
 /*----------------  ft_swap.c  ---------------*/
-void	ft_ss(t_stack **stack_a, t_stack **stack_b);
-void	ft_swap(t_stack **stack);
+void	ft_ss(t_stack **stack_a, t_stack **stack_b, int move);
+void	ft_swap(t_stack **stack, int move);
 
 /*----------------  ft_rrotate.c  ---------------*/
-void	ft_rrr(t_stack **stack_a, t_stack **stack_b);
-void	ft_rrotate(t_stack **stack);
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b, int move);
+void	ft_rrotate(t_stack **stack, int move);
 
 /*----------------  ft_rotate.c  ---------------*/
-void	ft_rr(t_stack **stack_a, t_stack **stack_b);
-void	ft_rotate(t_stack **stack);
+void	ft_rr(t_stack **stack_a, t_stack **stack_b, int move);
+void	ft_rotate(t_stack **stack, int move);
 
 /*----------------  ft_push.c  ---------------*/
-void	ft_push(t_stack **stack_a, t_stack **stack_b);
+void	ft_push(t_stack **stack_a, t_stack **stack_b, int move);
 
 #endif
