@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 16:08:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/28 17:05:15 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/01 14:37:09 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,27 @@ void	ft_print_move(int move)
 	if (move == 0)
 		return;
 	if (move == 1)
-		ft_printf("%s", "sa, ");
+		ft_printf("%s", "sa\n");
 	if (move == 2)
-		ft_printf("%s", "sb, ");
+		ft_printf("%s", "sb\n");
 	if (move == 3)
-		ft_printf("%s", "ss, ");
+		ft_printf("%s", "ss\n");
 	if (move == 4)
-		ft_printf("%s", "pa, ");
+		ft_printf("%s", "pa\n");
 	if (move == 5)
-		ft_printf("%s", "pb, ");
+		ft_printf("%s", "pb\n");
 	if (move == 6)
-		ft_printf("%s", "ra, ");
+		ft_printf("%s", "ra\n");
 	if (move == 7)
-		ft_printf("%s", "rb, ");
+		ft_printf("%s", "rb\n");
 	if (move == 8)
-		ft_printf("%s", "rr, ");
+		ft_printf("%s", "rr\n");
 	if (move == 9)
-		ft_printf("%s", "rra, ");
+		ft_printf("%s", "rra\n");
 	if (move == 10)
-		ft_printf("%s", "rrb, ");
+		ft_printf("%s", "rrb\n");
 	if (move == 11)
-		ft_printf("%s", "rrr, ");
+		ft_printf("%s", "rrr\n");
 }
 
 void	ft_refresh_last_stack(t_stack **stack)

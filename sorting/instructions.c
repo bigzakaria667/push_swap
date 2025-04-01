@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 15:43:53 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/28 17:03:16 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/01 15:03:22 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ void	ft_sort_min(t_stack **stack)
 	while ((*stack)->top->data != (*stack)->min->data)
 	{
 		if (median == 0)
-			ft_rrotate(stack, 9);
-		else
 			ft_rotate(stack, 6);
+		else
+			ft_rrotate(stack, 9);
 		ft_refresh_last_stack(stack);
 	}
 	ft_refresh_last_stack(stack);
@@ -39,9 +39,9 @@ void	ft_push_target_b(t_stack **stack_a, t_stack **stack_b)
 		while ((*stack_a)->top->data != (*stack_b)->top->target->data)
 		{
 			if (median == 0)
-				ft_rrotate(stack_a, 9);
-			else
 				ft_rotate(stack_a, 6);
+			else
+				ft_rrotate(stack_a, 9);
 			ft_refresh(stack_a, stack_b);
 		}
 		ft_push(stack_a, stack_b, 4);

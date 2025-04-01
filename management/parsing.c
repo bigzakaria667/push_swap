@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/28 15:52:50 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/01 15:20:29 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,12 @@ int	ft_put_into_list(char **argv, t_stack **stack_a)
 		nbcount++;
 	if (nbcount <= 1)
 		return (1);
+	while (argv[i])
+	{
+		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i++]) < INT_MIN)
+			return(1);
+	}
+	i = 0;
 	while (argv[i])
 		stack_insert(stack_a, ft_atoi(argv[i++]));
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/12 18:15:32 by zel-ghab          #+#    #+#             */
-/*   Updated: 2024/11/18 19:47:24 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/01 15:17:37 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_overflow(int n)
 		return (-1);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	int					i;
 	int					signe;
@@ -45,8 +45,9 @@ int	ft_atoi(const char *str)
 		result += str[i] - 48;
 		i++;
 	}
-	return (result * signe);
+	return (result * (long)signe);
 }
+
 /*
 #include <stdio.h>
 int main()
