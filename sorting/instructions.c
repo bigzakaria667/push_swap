@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 15:43:53 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/01 15:03:22 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/03 20:26:55 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_push_target_b(t_stack **stack_a, t_stack **stack_b)
 	median = 0;
 	while ((*stack_b)->size > 0) 
 	{
-		median = (*stack_a)->top->target->median;
+		median = (*stack_b)->top->target->median;
 		while ((*stack_a)->top->data != (*stack_b)->top->target->data)
 		{
 			if (median == 0)

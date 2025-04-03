@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 23:35:25 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/01 15:01:33 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/03 17:07:12 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,21 @@ void	push_cheap(t_stack **stack_a, t_stack **stack_b)
 	cheapest = (*stack_a)->cheapest;
 	target = (*stack_a)->cheapest->target;
 	median = (*stack_a)->cheapest->median;
+	if ((*stack_a)->cheapest->median == target->median)
+	{
+		if (median == 0)
+		{
+			while (((*stack_a)->top->data != cheapest->data) && ((*stack_b)->top->data != target->data))
+				ft_rr(stack_a, stack_b, 8);
+			ft_refresh(stack_a, stack_b);
+		}
+		else
+		{
+			while (((*stack_a)->top->data != cheapest->data) && ((*stack_b)->top->data != target->data))
+				ft_rrr(stack_a, stack_b, 11);
+			ft_refresh(stack_a, stack_b);
+		}
+	}
 	while ((*stack_a)->top->data != cheapest->data)
 	{
 		if (median == 0)
