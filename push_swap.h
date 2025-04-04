@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/28 16:34:46 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/04 15:50:02 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ t_node	*get_before_bot(t_stack *stack);
 
 /*----------------  cheapest.c  ---------------*/
 void	get_cheapest(t_stack **stack_a);
+void	opti_rotate(t_stack **stack_a, t_stack **stack_b);
 void	push_cheap(t_stack **stack_a, t_stack **stack_b);
 
 /*----------------  instructions.c  ---------------*/
