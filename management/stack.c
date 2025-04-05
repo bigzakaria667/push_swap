@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/25 16:26:34 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 14:20:27 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	stack_insert(t_stack **stack, int x)
 		return;
 	node->next = NULL;
 	node->data = x;
+	node->moves = 0;
 	if((*stack)->bot)
 		(*stack)->bot->next = node;
 	else
@@ -84,8 +85,10 @@ void	stack_init(t_stack **stack_a, t_stack **stack_b)
 {
 	*stack_a = malloc(sizeof(t_stack));
 	*stack_b = malloc(sizeof(t_stack));
-	if (!*stack_a || !*stack_b)
-		return;
+	if (!*stack_a)
+		return (ft_free(stack_b));
+	if (!*stack_b)
+		return (ft_free(stack_a));
 	(*stack_a)->size = 0;
 	(*stack_a)->top = NULL;
 	(*stack_a)->bot = NULL;

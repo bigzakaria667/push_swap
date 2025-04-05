@@ -6,13 +6,13 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/23 18:05:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2024/11/17 20:44:42 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/04 16:55:01 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	ft_free_strings_already_malloced(char **split, size_t index)
+void	ft_free_strings_already_malloced(char **split, size_t index)
 {
 	while (index > 0)
 		free(split[--index]);

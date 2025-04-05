@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 23:35:25 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/04 15:56:06 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 14:15:51 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	get_cheapest(t_stack **stack_a)
 	t_node	*node;
 	int	min_moves;
 
+	if (!stack_a || !*stack_a)
+		return;
 	node = (*stack_a)->top;
 	min_moves = INT_MAX;
 	while (node)

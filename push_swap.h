@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/04 15:50:02 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/04 18:07:30 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,18 @@ void	node_target_b(t_node **node, t_stack **stack);
 void	node_target_a(t_node **node, t_stack **stack);
 
 /*----------------  utils.c  ---------------*/
-void	ft_print_move(int move);
 void	ft_error(int error);
+t_node	*get_before_bot(t_stack *stack);
+void	ft_print_move(int move);
+
+/*----------------  refresh.c  ---------------*/
 void	ft_refresh_last_stack(t_stack **stack);
 void	ft_refresh(t_stack **stack_a, t_stack **stack_b);
-t_node	*get_before_bot(t_stack *stack);
+
+/*----------------  free.c  ---------------*/
+void	ft_free_split(char **split);
+void	ft_free_twice(t_stack **stack_a, t_stack **stack_b);
+void	ft_free(t_stack **stack);
 
 /*----------------  cheapest.c  ---------------*/
 void	get_cheapest(t_stack **stack_a);

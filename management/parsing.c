@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/01 15:20:29 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 14:51:08 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ int	ft_put_into_list(char **argv, t_stack **stack_a)
 
 	i = 0;	
 	nbcount = 0;
-	if (ft_check_double(argv) != 0)
-		return (1);
+	ft_check_double(argv);
 	while (argv[nbcount])
 		nbcount++;
 	if (nbcount <= 1)
@@ -50,7 +49,7 @@ int	ft_check_double(char **argv)
 		while (argv[i])
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[j]))
-				return (ft_printf("%s", "Double detected!\n"));
+				return (1);
 			i++;
 		}
 		j++;
@@ -105,8 +104,9 @@ int	ft_check_argument(char *argv, t_stack **stack_a)
 	spliter = ft_split(argv, ' ');
 	if (!spliter)
 		return (1);
-	if(ft_put_into_list(spliter, stack_a) == 1)
-		return (1);
+	if (ft_put_into_list(spliter, stack_a) == 1)
+		return (ft_free_split(spliter), 1);
+	ft_free_split(spliter);
 	return (0);
 }
 
