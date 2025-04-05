@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/22 23:35:25 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/05 14:15:51 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 16:13:56 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 void	get_cheapest(t_stack **stack_a)
 {
 	t_node	*node;
-	int	min_moves;
+	int		min_moves;
 
 	if (!stack_a || !*stack_a)
-		return;
+		exit (0);
 	node = (*stack_a)->top;
 	min_moves = INT_MAX;
 	while (node)
@@ -34,7 +34,7 @@ void	get_cheapest(t_stack **stack_a)
 
 void	opti_rotate(t_stack **stack_a, t_stack **stack_b)
 {
-	int	median;
+	int		median;
 	t_node	*cheapest;
 	t_node	*target;
 
@@ -43,7 +43,8 @@ void	opti_rotate(t_stack **stack_a, t_stack **stack_b)
 	median = (*stack_a)->cheapest->median;
 	if ((*stack_a)->cheapest->median == target->median)
 	{
-		while (((*stack_a)->top->data != cheapest->data) && ((*stack_b)->top->data != target->data))
+		while (((*stack_a)->top->data != cheapest->data)
+			&& ((*stack_b)->top->data != target->data))
 		{
 			if (median == 0)
 				ft_rr(stack_a, stack_b, 8);
@@ -56,7 +57,7 @@ void	opti_rotate(t_stack **stack_a, t_stack **stack_b)
 
 void	push_cheap(t_stack **stack_a, t_stack **stack_b)
 {
-	int	median;
+	int		median;
 	t_node	*cheapest;
 	t_node	*target;
 

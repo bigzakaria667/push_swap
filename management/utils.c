@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 16:08:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/05 14:47:18 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 16:30:16 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_node	*get_before_bot(t_stack *stack)
 void	ft_print_move(int move)
 {
 	if (move == 0)
-		return;
+		return ;
 	if (move == 1)
 		ft_printf("%s", "sa\n");
 	if (move == 2)

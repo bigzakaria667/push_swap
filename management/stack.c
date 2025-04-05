@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/05 14:20:27 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 16:28:06 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ void	stack_print(t_stack *stack_a, t_stack *stack_b)
 		ft_printf("[%d]", node->data);
 		node = node->next;
 	}
-	ft_printf("%c",  '\n');
+	ft_printf("%c", '\n');
 	node = stack_b->top;
 	while (node)
 	{
 		ft_printf("[%d]", node->data);
 		node = node->next;
 	}
-	ft_printf("%s",  "\n\n");
+	ft_printf("%s", "\n\n");
 }
 
 void	stack_min_max(t_stack **stack)
@@ -52,7 +52,7 @@ void	stack_min_max(t_stack **stack)
 void	stack_size(t_stack **stack)
 {
 	t_node	*node;
-	int	size;
+	int		size;
 
 	size = 0;
 	node = (*stack)->top;
@@ -70,11 +70,11 @@ void	stack_insert(t_stack **stack, int x)
 
 	node = malloc(sizeof(t_node));
 	if (!node)
-		return;
+		return ;
 	node->next = NULL;
 	node->data = x;
 	node->moves = 0;
-	if((*stack)->bot)
+	if ((*stack)->bot)
 		(*stack)->bot->next = node;
 	else
 		(*stack)->top = node;

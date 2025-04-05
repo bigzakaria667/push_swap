@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/16 16:14:21 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/27 17:46:59 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 16:28:49 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	node_read_b(t_stack **stack_b, t_stack **stack_a)
 	t_node	*node;
 
 	if (!(*stack_a)->top || !(*stack_b)->top)
-		return;
+		return ;
 	node = (*stack_b)->top;
 	while (node)
 	{
@@ -31,7 +31,7 @@ void	node_moves(t_node **node, t_stack **stack_a, t_stack **stack_b)
 	int	moves;
 
 	if (!*node || !(*stack_a)->top || !(*stack_b)->top)
-		return;
+		return ;
 	moves = 0;
 	if ((*node)->median == 0)
 		moves += (*node)->index;
@@ -54,11 +54,11 @@ void	node_median(t_node **node, int size_stack)
 
 void	node_init(t_stack **stack_a, t_stack **stack_b)
 {
-	int	index;
+	int		index;
 	t_node	*node;
 
 	if (!(*stack_a)->top && !(*stack_b)->top)
-		return;
+		return ;
 	index = 0;
 	node = (*stack_b)->top;
 	while (node)

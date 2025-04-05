@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 20:13:29 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/03/28 16:06:58 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 16:24:18 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ void	ft_push(t_stack **stack_a, t_stack **stack_b, int move)
 	t_node	*temp;
 
 	if (!*stack_b)
-		return;
+		return ;
 	temp = (*stack_b)->top;
 	(*stack_b)->top = (*stack_b)->top->next;
-	if (!(*stack_b)->top) // Si STACK B est vide
+	if (!(*stack_b)->top)
 		(*stack_b)->bot = NULL;
 	temp->next = (*stack_a)->top;
 	(*stack_a)->top = temp;
-	if (!(*stack_a)->bot) // Si STACK A est vide
+	if (!(*stack_a)->bot)
 		(*stack_a)->bot = temp;
 	ft_print_move(move);
 }

@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 17:49:40 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/04 17:49:44 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 15:55:40 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_refresh_last_stack(t_stack **stack)
 {
-	int	index;
+	int		index;
 	t_node	*node;
 
 	stack_size(stack);

@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/05 14:51:08 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 16:34:53 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,10 @@ int	ft_put_into_list(char **argv, t_stack **stack_a)
 	int	i;
 	int	nbcount;
 
-	i = 0;	
+	i = 0;
 	nbcount = 0;
-	ft_check_double(argv);
+	if (ft_check_double(argv) == 1)
+		return (1);
 	while (argv[nbcount])
 		nbcount++;
 	if (nbcount <= 1)
@@ -27,7 +28,7 @@ int	ft_put_into_list(char **argv, t_stack **stack_a)
 	while (argv[i])
 	{
 		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i++]) < INT_MIN)
-			return(1);
+			return (1);
 	}
 	i = 0;
 	while (argv[i])
@@ -39,7 +40,7 @@ int	ft_check_double(char **argv)
 {
 	int	i;
 	int	j;
-	
+
 	i = 1;
 	j = 0;
 	if (!argv)
@@ -87,7 +88,7 @@ int	ft_check_arguments(char **argv, t_stack **stack_a)
 
 int	ft_check_argument(char *argv, t_stack **stack_a)
 {
-	int	i;
+	int		i;
 	char	**spliter;
 
 	if (!argv)
@@ -97,9 +98,10 @@ int	ft_check_argument(char *argv, t_stack **stack_a)
 	{
 		if ((argv[i] == '-' || argv[i] == '+') && !ft_isdigit(argv[i + 1]))
 			return (1);
-		if (!ft_isdigit(argv[i]) && argv[i] != ' ' && argv[i] != '-' && argv[i] != '+')
+		if (!ft_isdigit(argv[i]) && argv[i] != ' '
+			&& argv[i] != '-' && argv[i] != '+')
 			return (1);
-		i++;	
+		i++;
 	}
 	spliter = ft_split(argv, ' ');
 	if (!spliter)
