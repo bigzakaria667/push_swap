@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/05 15:49:09 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/06 14:25:30 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		main(int argc, char **argv);
 void	stack_print(t_stack *stack_a, t_stack *stack_b);
 void	stack_min_max(t_stack **stack);
 void	stack_size(t_stack **stack);
-void	stack_insert(t_stack **stack, int x);
+int		stack_insert(t_stack **stack, int x);
 void	stack_init(t_stack **stack_a, t_stack **stack_b);
 /*----------------  node.c  ---------------*/
 void	node_read_b(t_stack **stack_b, t_stack **stack);
@@ -69,6 +69,7 @@ void	get_cheapest(t_stack **stack_a);
 void	opti_rotate(t_stack **stack_a, t_stack **stack_b);
 void	push_cheap(t_stack **stack_a, t_stack **stack_b);
 /*----------------  instructions.c  ---------------*/
+void	ft_sort_two(t_stack **stack);
 void	ft_sort_min(t_stack **stack);
 void	ft_push_target_b(t_stack **stack_a, t_stack **stack_b);
 void	ft_sort_three(t_stack **stack_a, t_stack **stack_b);

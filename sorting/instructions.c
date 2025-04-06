@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 15:43:53 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/05 16:00:42 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/06 14:31:09 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,25 @@ void	ft_sort_three(t_stack **stack_a, t_stack **stack_b)
 	ft_refresh(stack_a, stack_b);
 }
 
+void	ft_sort_two(t_stack **stack)
+{
+	t_node	*node;
+
+	node = (*stack)->top;
+	if (node->data > node->next->data)
+		ft_rotate(stack, 6);
+	else
+		return ;
+}
+
 void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 {
 	int	i;
 
 	i = 0;
 	ft_refresh(stack_a, stack_b);
+	if ((*stack_a)->size == 2)
+		return (ft_sort_two(stack_a));
 	while (i < 2)
 	{
 		ft_push(stack_b, stack_a, 5);
@@ -90,7 +103,8 @@ void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 		ft_push(stack_b, stack_a, 5);
 		ft_refresh(stack_a, stack_b);
 	}
-	ft_sort_three(stack_a, stack_b);
+	if ((*stack_a)->size == 3)
+		ft_sort_three(stack_a, stack_b);
 	ft_push_target_b(stack_a, stack_b);
 	ft_sort_min(stack_a);
 }

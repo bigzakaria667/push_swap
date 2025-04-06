@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/05 16:28:06 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/05 20:55:36 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,13 @@ void	stack_size(t_stack **stack)
 	(*stack)->size = size;
 }
 
-void	stack_insert(t_stack **stack, int x)
+int	stack_insert(t_stack **stack, int x)
 {
 	t_node	*node;
 
 	node = malloc(sizeof(t_node));
 	if (!node)
-		return ;
+		return (1);
 	node->next = NULL;
 	node->data = x;
 	node->moves = 0;
@@ -79,16 +79,17 @@ void	stack_insert(t_stack **stack, int x)
 	else
 		(*stack)->top = node;
 	(*stack)->bot = node;
+	return (0);
 }
 
 void	stack_init(t_stack **stack_a, t_stack **stack_b)
 {
 	*stack_a = malloc(sizeof(t_stack));
-	*stack_b = malloc(sizeof(t_stack));
 	if (!*stack_a)
-		return (ft_free(stack_b));
+		return (ft_error(1));
+	*stack_b = malloc(sizeof(t_stack));
 	if (!*stack_b)
-		return (ft_free(stack_a));
+		return (ft_free(stack_a), ft_error(1));
 	(*stack_a)->size = 0;
 	(*stack_a)->top = NULL;
 	(*stack_a)->bot = NULL;
