@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/10/28 20:50:20 by zel-ghab          #+#    #+#              #
-#    Updated: 2024/12/07 15:41:46 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/04/09 14:46:42 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ SRC = ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c ft_hexadecimalong.c
 
 OBJ = $(SRC:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fPIE
 AR = @ar -rc
 
 all : $(NAME)
 
-$(NAME) : $(OBJ)
+$(NAME): $(OBJ)
 	$(AR) $(NAME) ${OBJ}
 
 $(OBJ) :
