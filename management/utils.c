@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 16:08:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/05 16:30:16 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/09 15:58:12 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ void	ft_error(int error)
 {
 	if (error == 1)
 	{
-		ft_printf("%s", "Error\n");
+		write(2, "Error\n", 6);
 		exit(1);
 	}
 	else
-		exit(0);
+		write(1, "Error\n", 6);
+		exit(1);
 }
 
 t_node	*get_before_bot(t_stack *stack)
