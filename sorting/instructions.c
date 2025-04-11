@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 15:43:53 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/11 14:57:31 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:58:17 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,8 @@ void	ft_sort_two(t_stack **stack)
 void	ft_instructions(t_stack **stack_a, t_stack **stack_b)
 {
 	ft_refresh(stack_a, stack_b);
+	if (check_already_sort(stack_a) == 0)
+		return ;
 	if ((*stack_a)->size == 2)
 		return (ft_sort_two(stack_a));
 	if ((*stack_a)->size == 3)

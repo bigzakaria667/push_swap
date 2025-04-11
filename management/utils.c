@@ -6,11 +6,27 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/17 16:08:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/11 14:57:28 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:51:29 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+int	check_already_sort(t_stack **stack)
+{
+	t_node	*node;
+
+	if (!(*stack)->top)
+		return (1);
+	node = (*stack)->top;
+	while (node->next)
+	{
+		if (node->data > node->next->data)
+			return (1);
+		node = node->next;
+	}
+	return (0);
+}
 
 void	ft_error(int error)
 {
