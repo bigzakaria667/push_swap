@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/25 15:43:53 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/11 15:58:17 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/11 19:46:16 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,19 @@ void	ft_sort_three(t_stack **stack_a, t_stack **stack_b)
 {
 	if ((*stack_a)->max->index == 0 && (*stack_a)->min->index == 2)
 	{
-		ft_rrotate(stack_a, 9);
+		ft_rotate(stack_a, 6);
 		ft_refresh(stack_a, stack_b);
 		ft_swap(stack_a, 1);
 	}
 	else if ((*stack_a)->max->index == 0 && (*stack_a)->min->index == 1)
-		ft_rrotate(stack_a, 9);
+		ft_rotate(stack_a, 6);
 	else if ((*stack_a)->max->index == 2 && (*stack_a)->min->index == 1)
 		ft_swap(stack_a, 1);
 	else if ((*stack_a)->max->index == 1 && (*stack_a)->min->index == 2)
-		ft_rotate(stack_a, 6);
+		ft_rrotate(stack_a, 9);
 	else if ((*stack_a)->max->index == 1 && (*stack_a)->min->index == 0)
 	{
-		ft_rotate(stack_a, 6);
+		ft_rrotate(stack_a, 9);
 		ft_refresh(stack_a, stack_b);
 		ft_swap(stack_a, 1);
 	}
