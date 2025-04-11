@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:17:33 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/09 17:15:53 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/11 15:13:24 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_put_into_list(char **argv, t_stack **stack_a)
 	while (argv[nbcount])
 		nbcount++;
 	if (nbcount <= 1)
-		return (1);
+		return (2);
 	while (argv[i])
 	{
 		if (ft_atoi(argv[i]) > INT_MAX || ft_atoi(argv[i++]) < INT_MIN)
@@ -67,6 +67,7 @@ int	ft_check_arguments(char **argv, t_stack **stack_a)
 {
 	int	i;
 	int	j;
+	int	error;
 
 	i = 0;
 	j = 1;
@@ -85,14 +86,16 @@ int	ft_check_arguments(char **argv, t_stack **stack_a)
 		i++;
 		j = 1;
 	}
-	if (ft_put_into_list(argv, stack_a) == 1)
-		return (1);
+	error = ft_put_into_list(argv, stack_a);
+	if (error != 0)
+		return (error);
 	return (0);
 }
 
 int	ft_check_argument(char *argv, t_stack **stack_a)
 {
 	int		i;
+	int		error;
 	char	**spliter;
 
 	if (!argv)
@@ -110,8 +113,9 @@ int	ft_check_argument(char *argv, t_stack **stack_a)
 	spliter = ft_split(argv, ' ');
 	if (!spliter)
 		return (1);
-	if (ft_put_into_list(spliter, stack_a) == 1)
-		return (ft_free_split(spliter), 1);
+	error = ft_put_into_list(spliter, stack_a);
+	if (error != 0)
+		return (ft_free_split(spliter), error);
 	ft_free_split(spliter);
 	return (0);
 }
@@ -119,7 +123,7 @@ int	ft_check_argument(char *argv, t_stack **stack_a)
 int	ft_checker(int argc, char **argv, t_stack **stack_a)
 {
 	if (argc < 2)
-		return (1);
+		return (2);
 	else if (argc == 2)
 		return (ft_check_argument(argv[1], stack_a));
 	else
