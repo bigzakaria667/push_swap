@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 17:53:01 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/04/11 16:09:13 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/04/11 17:02:25 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@
 
 NAME 		= push_swap
 CC		= cc
-CFLAGS		= -Wall -Wextra -Werror -g
+CFLAGS		= -Wall -Wextra -Werror
 
 ###########################################
 ## LIBRAIRIES
@@ -54,7 +54,7 @@ ${NAME} : ${OBJ_FILES}
 	@make -s -C ${PRINTF}
 	@make -s -C ${LIBFT}
 	@${CC} ${CFLAGS} ${OBJ_FILES} ${LDFLAGS} -o ${NAME}
-	@echo "✅ Compilation réussie !"
+	@echo "✅ Successful compilation !"
 
 %.o : %.c
 	@${CC} ${CFLAGS} ${IFLAGS} -c $< -o $@
@@ -63,13 +63,13 @@ clean :
 	@rm -f ${OBJ_FILES} movement/*.o management/*.o sorting/*.o
 	@make -s clean -C $(LIBFT)
 	@make -s clean -C $(PRINTF)
-	@echo "🧹 Fichiers objets supprimés."
+	@echo "🧹 All objects files deleted."
 
 fclean : clean
 	@make -s fclean -C $(LIBFT)
 	@make -s fclean -C $(PRINTF)
 	@rm -rf ${NAME}
-	@echo "🧹 Tout est reset!"
+	@echo "🧹 Reset!"
 
 re : fclean all
 

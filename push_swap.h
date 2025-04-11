@@ -6,7 +6,7 @@
 /*   By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 16:18:09 by zel-ghab          #+#    #+#             */
-/*   Updated: 2025/04/11 15:54:03 by zel-ghab         ###   ########.fr       */
+/*   Updated: 2025/04/11 16:50:03 by zel-ghab         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	node_target_a(t_node **node, t_stack **stack);
 void	ft_error(int error);
 t_node	*get_before_bot(t_stack *stack);
 void	ft_print_move(int move);
-int	check_already_sort(t_stack **stack);
+int		check_already_sort(t_stack **stack);
 /*----------------  refresh.c  ---------------*/
 void	ft_refresh_last_stack(t_stack **stack);
 void	ft_refresh(t_stack **stack_a, t_stack **stack_b);
