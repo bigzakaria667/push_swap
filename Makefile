@@ -6,7 +6,7 @@
 #    By: zel-ghab <zel-ghab@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/08 17:53:01 by zel-ghab          #+#    #+#              #
-#    Updated: 2025/04/09 14:46:19 by zel-ghab         ###   ########.fr        #
+#    Updated: 2025/04/11 16:09:13 by zel-ghab         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 ## ARGUMENTS
 
 NAME 		= push_swap
-CC		= gcc
+CC		= cc
 CFLAGS		= -Wall -Wextra -Werror -g
 
 ###########################################
